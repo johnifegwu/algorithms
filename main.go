@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/johnifegwu/algorithms/algorithms/gcd"
+	"github.com/johnifegwu/algorithms/algorithms/mergesort"
 	"github.com/johnifegwu/algorithms/algorithms/recursion"
 	"github.com/johnifegwu/algorithms/datastructures/hashmap"
 	"github.com/johnifegwu/algorithms/datastructures/queue"
@@ -13,6 +14,25 @@ import (
 func main() {
 	// Algorithm test
 	//=============================================================
+
+	// Merge Sort
+	// Test MergeSort with integers
+	data := []int{38, 27, 43, 3, 9, 82, 10}
+	fmt.Println("Unsorted int slice:", data)
+	sortedData := mergesort.MergeSort(data)
+	fmt.Println("Sorted int slice:", sortedData)
+
+	// Test MergeSort with floats
+	dataFloat := []float64{3.14, 2.71, 1.41, 1.73}
+	fmt.Println("\nUnsorted float slice:", dataFloat)
+	sortedDataFloat := mergesort.MergeSort(dataFloat)
+	fmt.Println("Sorted float slice:", sortedDataFloat)
+
+	// Test MergeSort with strings
+	dataString := []string{"banana", "apple", "cherry", "date"}
+	fmt.Println("\nUnsorted string slice:", dataString)
+	sortedDataString := mergesort.MergeSort(dataString)
+	fmt.Println("Sorted string slice:", sortedDataString)
 
 	// Recursion
 	// Test Power function
