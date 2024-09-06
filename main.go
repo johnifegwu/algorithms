@@ -4,12 +4,45 @@ import (
 	"fmt"
 
 	"github.com/johnifegwu/algorithms/algorithms/gcd"
+	"github.com/johnifegwu/algorithms/algorithms/recursion"
 	"github.com/johnifegwu/algorithms/datastructures/hashmap"
 	"github.com/johnifegwu/algorithms/datastructures/queue"
 	"github.com/johnifegwu/algorithms/datastructures/stack"
 )
 
 func main() {
+	// Algorithm test
+	//=============================================================
+
+	// Recursion
+	// Test Power function
+	fmt.Println("Testing Power Function:")
+	base := 2
+	exponent := 4
+	result := recursion.Power(base, exponent)
+	fmt.Printf("%d^%d = %d\n", base, exponent, result) // Output: 2^4 = 16
+
+	// Test Power with different inputs
+	base = 5
+	exponent = 3
+	result = recursion.Power(base, exponent)
+	fmt.Printf("%d^%d = %d\n", base, exponent, result) // Output: 5^3 = 125
+
+	// Test Factorial function
+	fmt.Println("\nTesting Factorial Function:")
+	num := 5
+	factResult := recursion.Factorial(num)
+	fmt.Printf("%d! = %d\n", num, factResult) // Output: 5! = 120
+
+	// Test Factorial with 0
+	num = 0
+	factResult = recursion.Factorial(num)
+	fmt.Printf("%d! = %d\n", num, factResult) // Output: 0! = 1
+
+	//Greatest common diniminator implementation
+	a := 20
+	b := 8
+	fmt.Println(*gcd.GetGcd(&a, &b)) // Pass the pointers to 'a' and 'b', dereference the result
 
 	// HashMap datastructure usage example
 	//==================================================
@@ -113,9 +146,4 @@ func main() {
 		fmt.Println("Stack is empty.")
 	}
 	//============================================================
-
-	//Greatest common diniminator implementation
-	a := 20
-	b := 8
-	fmt.Println(*gcd.GetGcd(&a, &b)) // Pass the pointers to 'a' and 'b', dereference the result
 }
