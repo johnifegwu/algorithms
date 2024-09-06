@@ -3,12 +3,41 @@ package main
 import (
 	"fmt"
 
+	"github.com/johnifegwu/algorithms/algorithms/gcd"
+	"github.com/johnifegwu/algorithms/datastructures/hashmap"
 	"github.com/johnifegwu/algorithms/datastructures/queue"
 	"github.com/johnifegwu/algorithms/datastructures/stack"
-	"github.com/johnifegwu/algorithms/gcd"
 )
 
 func main() {
+
+	// HashMap datastructure usage example
+	//==================================================
+	// Create a new HashMap for strings to integers
+	hashMap := hashmap.NewHashMap[string, int]()
+	hashMap.Add("one", 1)
+	hashMap.Add("two", 2)
+	// dump hashmap
+	fmt.Println(hashMap.Dump())
+
+	// Remove an existing key
+	removed := hashMap.Remove("one")
+	fmt.Println("Removed 'one':", removed) // Output: Removed 'one': true
+
+	// Attempt to remove a non-existing key
+	removed = hashMap.Remove("three")
+	fmt.Println("Removed 'three':", removed) // Output: Removed 'three': false
+	// dump hashmap
+	fmt.Println(hashMap.Dump())
+
+	// Check the value of a remaining key
+	if value, exists := hashMap.Get("two"); exists {
+		fmt.Println("Value for 'two':", value) // Output: Value for 'two': 2
+	} else {
+		fmt.Println("'two' not found")
+	}
+	//==================================================
+
 	// Queue datastructure usage example
 	//==================================================
 	// Create a new queue of integers
