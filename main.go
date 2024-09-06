@@ -3,13 +3,39 @@ package main
 import (
 	"fmt"
 
+	"github.com/johnifegwu/algorithms/datastructures/queue"
 	"github.com/johnifegwu/algorithms/datastructures/stack"
 	"github.com/johnifegwu/algorithms/gcd"
 )
 
 func main() {
+	// Queue datastructure usage example
+	//==================================================
+	// Create a new queue of integers
+	intQueue := &queue.Queue[int]{}
+	intQueue.Enqueue(10)
+	intQueue.Enqueue(20)
+	intQueue.Enqueue(30)
+	// print queue
+	fmt.Println(intQueue.Dump())
+
+	fmt.Println("Queue Size:", intQueue.Size()) // Output: Queue Size: 3
+
+	if front, ok := intQueue.Peek(); ok {
+		fmt.Println("Front Element:", front) // Output: Front Element: 10
+	}
+
+	if dequeued, ok := intQueue.Dequeue(); ok {
+		fmt.Println("Dequeued:", dequeued) // Output: Dequeued: 10
+		// print queue
+		fmt.Println(intQueue.Dump())
+	}
+
+	fmt.Println("Queue Size after Dequeue:", intQueue.Size()) // Output: Queue Size: 2
+	//==================================================
 
 	// Stack datastructure usage example
+	//==================================================
 	// Initialize a new stack for integers
 	intStack := &stack.Stack[int]{}
 	intStack.Push(10)
