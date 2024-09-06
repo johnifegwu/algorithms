@@ -5,6 +5,7 @@ import (
 
 	"github.com/johnifegwu/algorithms/algorithms/gcd"
 	"github.com/johnifegwu/algorithms/algorithms/mergesort"
+	"github.com/johnifegwu/algorithms/algorithms/quicksort"
 	"github.com/johnifegwu/algorithms/algorithms/recursion"
 	"github.com/johnifegwu/algorithms/datastructures/hashmap"
 	"github.com/johnifegwu/algorithms/datastructures/queue"
@@ -15,23 +16,43 @@ func main() {
 	// Algorithm test
 	//=============================================================
 
-	// Merge Sort
-	// Test MergeSort with integers
+	// Quick Sort
+	fmt.Println("Quick sort - - - - - - - - -")
+	// Test QuickSort with integers
 	data := []int{38, 27, 43, 3, 9, 82, 10}
 	fmt.Println("Unsorted int slice:", data)
-	sortedData := mergesort.MergeSort(data)
+	quicksort.QuickSort(data)
+	fmt.Println("Sorted int slice:", data)
+
+	// Test QuickSort with floats
+	dataFloat := []float64{3.14, 2.71, 1.41, 1.73}
+	fmt.Println("\nUnsorted float slice:", dataFloat)
+	quicksort.QuickSort(dataFloat)
+	fmt.Println("Sorted float slice:", dataFloat)
+
+	// Test QuickSort with strings
+	dataString := []string{"banana", "apple", "cherry", "date"}
+	fmt.Println("\nUnsorted string slice:", dataString)
+	quicksort.QuickSort(dataString)
+	fmt.Println("Sorted string slice:", dataString)
+	fmt.Println("End -- -- - - - - - - - -")
+	// Merge Sort
+	// Test MergeSort with integers
+	data1 := []int{38, 27, 43, 3, 9, 82, 10}
+	fmt.Println("Unsorted int slice:", data1)
+	sortedData := mergesort.MergeSort(data1)
 	fmt.Println("Sorted int slice:", sortedData)
 
 	// Test MergeSort with floats
-	dataFloat := []float64{3.14, 2.71, 1.41, 1.73}
-	fmt.Println("\nUnsorted float slice:", dataFloat)
-	sortedDataFloat := mergesort.MergeSort(dataFloat)
+	dataFloat1 := []float64{3.14, 2.71, 1.41, 1.73}
+	fmt.Println("\nUnsorted float slice:", dataFloat1)
+	sortedDataFloat := mergesort.MergeSort(dataFloat1)
 	fmt.Println("Sorted float slice:", sortedDataFloat)
 
 	// Test MergeSort with strings
-	dataString := []string{"banana", "apple", "cherry", "date"}
-	fmt.Println("\nUnsorted string slice:", dataString)
-	sortedDataString := mergesort.MergeSort(dataString)
+	dataString1 := []string{"banana", "apple", "cherry", "date"}
+	fmt.Println("\nUnsorted string slice:", dataString1)
+	sortedDataString := mergesort.MergeSort(dataString1)
 	fmt.Println("Sorted string slice:", sortedDataString)
 
 	// Recursion
