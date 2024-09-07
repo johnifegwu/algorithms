@@ -42,3 +42,13 @@ func (h *HashMap[Key, Value]) Dump() []Value {
 
 	return values
 }
+
+// Size returns the number of elements in the HashMap
+func (h *HashMap[Key, Value]) Size() int {
+	return len(h.elements)
+}
+
+// Clear removes all elements from the HashMap
+func (h *HashMap[Key, Value]) Clear() {
+	h.elements = make(map[Key]Value)
+}
