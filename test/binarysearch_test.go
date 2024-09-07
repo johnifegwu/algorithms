@@ -93,3 +93,87 @@ func TestBinarySearch_Duplicates(t *testing.T) {
 		t.Errorf("Expected index between 1 and 3, but got %d with error: %v", index, err)
 	}
 }
+
+func TestIsSortedAsc_EmptyDataset(t *testing.T) {
+	dataset := []int{}
+	if !binarysearch.IsSortedAsc(dataset) {
+		t.Errorf("Expected true for empty dataset")
+	}
+}
+
+func TestIsSortedAsc_SortedDataset(t *testing.T) {
+	dataset := []int{1, 2, 3, 4, 5}
+	if !binarysearch.IsSortedAsc(dataset) {
+		t.Errorf("Expected true for sorted dataset")
+	}
+}
+
+func TestIsSortedAsc_UnsortedDataset(t *testing.T) {
+	dataset := []int{5, 3, 2, 1}
+	if binarysearch.IsSortedAsc(dataset) {
+		t.Errorf("Expected false for unsorted dataset")
+	}
+}
+
+func TestIsSortedAsc_SingleElementDataset(t *testing.T) {
+	dataset := []int{42}
+	if !binarysearch.IsSortedAsc(dataset) {
+		t.Errorf("Expected true for single element dataset")
+	}
+}
+
+func TestIsSortedAsc_DuplicateValues(t *testing.T) {
+	dataset := []int{1, 2, 2, 3, 4}
+	if !binarysearch.IsSortedAsc(dataset) {
+		t.Errorf("Expected true for dataset with duplicates")
+	}
+}
+
+func TestIsSortedAsc_FloatDataset(t *testing.T) {
+	dataset := []float64{1.1, 2.2, 3.3, 4.4}
+	if !binarysearch.IsSortedAsc(dataset) {
+		t.Errorf("Expected true for sorted float dataset")
+	}
+}
+
+func TestIsSortedDesc_EmptyDataset(t *testing.T) {
+	dataset := []int{}
+	if !binarysearch.IsSortedDesc(dataset) {
+		t.Errorf("Expected true for empty dataset")
+	}
+}
+
+func TestIsSortedDesc_SortedDataset(t *testing.T) {
+	dataset := []int{5, 4, 3, 2, 1}
+	if !binarysearch.IsSortedDesc(dataset) {
+		t.Errorf("Expected true for sorted dataset")
+	}
+}
+
+func TestIsSortedDesc_UnsortedDataset(t *testing.T) {
+	dataset := []int{1, 3, 2, 4}
+	if binarysearch.IsSortedDesc(dataset) {
+		t.Errorf("Expected false for unsorted dataset")
+	}
+}
+
+func TestIsSortedDesc_SingleElementDataset(t *testing.T) {
+	dataset := []int{42}
+	if !binarysearch.IsSortedDesc(dataset) {
+		t.Errorf("Expected true for single element dataset")
+	}
+}
+
+func TestIsSortedDesc_DuplicateValues(t *testing.T) {
+	dataset := []int{5, 5, 4, 3, 2}
+	if !binarysearch.IsSortedDesc(dataset) {
+		t.Errorf("Expected true for dataset with duplicates")
+	}
+}
+
+func TestIsSortedDesc_FloatDataset(t *testing.T) {
+	dataset := []float64{4.4, 3.3, 2.2, 1.1}
+	if !binarysearch.IsSortedDesc(dataset) {
+		t.Errorf("Expected true for sorted float dataset")
+	}
+}
