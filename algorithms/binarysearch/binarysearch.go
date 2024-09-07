@@ -31,3 +31,25 @@ func BinarySearch[T constraints.Ordered](dataset []T, itemToSearch T) (index int
 
 	return 0, errors.New("search failed")
 }
+
+func IsSortedAsc[T constraints.Ordered](dataset []T) bool {
+
+	for i := 0; i < len(dataset)-1; i++ {
+		if dataset[i] > dataset[i+1] {
+			return false
+		}
+	}
+
+	return true
+}
+
+func IsSortedDesc[T constraints.Ordered](dataset []T) bool {
+
+	for i := 0; i < len(dataset)-1; i++ {
+		if dataset[i] < dataset[i+1] {
+			return false
+		}
+	}
+
+	return true
+}
